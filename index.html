@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="file" id="demo">
+    <input type="file" class="demo" multiple>
+    <input type="file" class="demo">
+</body>
+</html>
+<script src="uploader.js"></script>
+
+<script>
+    var bbb = new RinUploader('.demo');
+    bbb.on('hash', function (e) {
+        console.log(e);
+    });
+
+    bbb.on('hashend', function (e) {
+        console.log(e);
+    });
+
+    bbb.on('hashallend', function (e) {
+        console.log(e);
+    });
+
+    bbb.on('change', function (e) {
+        bbb.hash();
+    });
+    console.log(bbb.uuid(100));
+    console.log(bbb);
+</script>
